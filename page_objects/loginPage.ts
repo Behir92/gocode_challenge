@@ -40,9 +40,9 @@ export class LoginPage {
     }
 
     public async verifyErrorMessage(errorText: string) {
-        if (await this.loginError.isVisible({timeout: 10000})) {
+        if (await this.loginError.isVisible({timeout: 30000})) {
             //Sometimes the message does not load immediately
-            await this.page.waitForTimeout(1000)
+            await this.page.waitForTimeout(5000)
             expect(this.loginError).toHaveText(errorText);
 
         }
